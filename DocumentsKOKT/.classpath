@@ -14,5 +14,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="C:/Program Files (x86)/Java/jre6/lib/ext/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="D:/VIKHLAEV/irab/java/Драйвера базы данных для JAVA/InterBase/firebirdsql-full.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

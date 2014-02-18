@@ -466,7 +466,7 @@ if (SessionUser.equals("")) {
 								
 			</th>
 
-		</tr>
+		</tr>  
 	</table>
 
 	<table border="0" cellspacing="1" align=center width="1200"

@@ -41,20 +41,25 @@ public class OracleConnect {
 	 * имя базы данных
 	*/
 	private String sDatabaseName;
+	/**
+	 * порт
+	*/
+	private String sPort;
 //--------------------------------------------------------------------------------------
 //  МЕТОДЫ КЛАССА
 //--------------------------------------------------------------------------------------
 	 /**
 	  * МЕТОД              конструктор класса
-	  * @param             имя, пароль, сервер, база
+	  * @param             имя, пароль, сервер, база, порт
 	  * @since             0.0.0.1
 	  */
-	public OracleConnect(String sName,String sPassword,String sServerIP, String sDatabaseName) {
+	public OracleConnect(String sName,String sPassword,String sServerIP, String sDatabaseName, String sPort ) {
 		this.sName = sName;
 		this.sPassword = sPassword;
 		this.sServerIP = sServerIP;
 		this.sDatabaseName = sDatabaseName;
-		setUrl("jdbc:oracle:thin:@" + sServerIP + ":1521:" + sDatabaseName);
+		this.sPort = sPort;
+		setUrl("jdbc:oracle:thin:@" + sServerIP + ":"+sPort+":" + sDatabaseName);
 	}
 	 /**
 	  * МЕТОД              подключение к БД

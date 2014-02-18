@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Formatter;
+import java.util.ResourceBundle;
 
 
 
@@ -54,10 +55,21 @@ public class ProeuserSQLRequest {
 	* МЕТОД              конструктор класса
 	* @param             отсуствуют
 	* @since             0.0.0.1
-	*/
-	public ProeuserSQLRequest() throws Exception{
-		 //вызываем метод подключения к базе данных Oracle
-		  oOC = new OracleConnect("proeuser","proeuser","plm.gskbgomel.by","SEARCH");
+	*/	
+	public ProeuserSQLRequest() throws Exception{		
+		ResourceBundle resource = ResourceBundle.getBundle("database");
+		String name =resource.getString("name");
+		String password =resource.getString("password");
+		String host =resource.getString("host");
+		String server =resource.getString("server");
+		String port =resource.getString("port");
+		
+		oOC = new OracleConnect(name,password,host,server,port);
+		 
+		//String sName, sPassword, sServerIP,  sDatabaseName,  sPort
+		
+		//вызываем метод подключения к базе данных Oracle
+		//oOC = new OracleConnect("proeuser","proeuser","plm.gskbgomel.by","SEARCH","1521");
 		// oOC = new OracleConnect("PROEUSER","masterkey","VVATOR_PC","VVATOR");
 			
 		  //подключить
@@ -66,6 +78,9 @@ public class ProeuserSQLRequest {
 		  oStmt = oOC.getCon().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
 	}
 
+
+	
+	
 
 	
 	
